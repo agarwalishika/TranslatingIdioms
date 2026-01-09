@@ -3,14 +3,12 @@
 ## Overview of our work
 We want to improve idiomatic translation (since models tend to literally translate idioms, which loses all semantic/cultural meaning of idioms):
 
-![Challenges when using LLMs to translate idioms](figures/noncomp_challenges.pdf "Challenges when using LLMs to translate idioms")
+![Challenges when using LLMs to translate idioms](figures/noncomp_challenges.png "Challenges when using LLMs to translate idioms")
 
 
 So, we used MTQE models as reward models to improving translation abilities of LLMs. We had four different flavors of MTQE rewards, all with varying degrees of supervision: 
 
-[QE-Positive](figures/qe_pos.pdf){width=100}
-[QE-Negative](figures/qe_neg.pdf){width=100}
-[QE-Constrained](figures/qe_cons.pdf){width=100}
+![GRPO Illustrations](figures/grpo_illustration.png)
 
 But we found that translating on idioms actually helps improve non-idiomatic translation as well! We have more detailed analysis in our paper. 
 
