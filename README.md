@@ -1,18 +1,27 @@
 # A Rising Tide Lifts All Boats: MTQE Rewards for Idioms Improve General Translation Quality
 
-Here, we include all our code for our paper.
+## Overview of our work
+We want to improve idiomatic translation (since models tend to literally translate idioms, which loses all semantic/cultural meaning of idioms):
 
-## Directory Structure
-### Training-Based methods:
-You can find the SFT and GRPO training code in `training_based/`, along with instructions on how to run the GRPO models.
+![Challenges when using LLMs to translate idioms](figures/noncomp_challenges.pdf "Challenges when using LLMs to translate idioms")
 
-### Training-Free methods:
-You can find LIA and our TrainingFree prompting method in `training_free/`.
 
-### Model baselines
-You can find the NLLB baseline in `nllb_baseline.py` and Command-R in `model_inference.py`.
+So, we used MTQE models as reward models to improving translation abilities of LLMs. We had four different flavors of MTQE rewards, all with varying degrees of supervision: 
+
+[QE-Positive](figures/qe_pos.pdf){width=100}
+[QE-Negative](figures/qe_neg.pdf){width=100}
+[QE-Constrained](figures/qe_cons.pdf){width=100}
+
+But we found that translating on idioms actually helps improve non-idiomatic translation as well! We have more detailed analysis in our paper. 
+
 
 ## To Reproduce Results
+
+### Directory Structure
+- Training-Based methods: You can find the SFT and GRPO training code in `training_based/`, along with instructions on how to run the GRPO models.
+- Training-Free methods: You can find LIA and our TrainingFree prompting method in `training_free/`.
+- Model baselines: You can find the NLLB baseline in `nllb_baseline.py` and Command-R in `model_inference.py`.
+---
 First, we need to generate model translations for each baseline (which are all stored in `outputs/`):
 1. Run the Training-Free methods to get the model translations for LIA and TrainingFree
 2. Train the Training-Based models
@@ -46,4 +55,4 @@ Next, we can plot the results. It's _very important_ to sort the `results/` fold
 Now, we can use `plot_results.py` to plot all the results.
 
 ## Contact
-If there are any questions/issues, please feel free to raise a Github issue, or reach out to Ishika Agarwal (ishikaa2 AT illinois DOT edu)
+If there are any questions/issues, please feel free to raise a Github issue, or reach out to Ishika Agarwal (ishikaa2 AT illinois DOT edu).
